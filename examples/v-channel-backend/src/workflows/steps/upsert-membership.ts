@@ -38,7 +38,7 @@ export const upsertMembershipStep = createStep(
     const service = container.resolve<MembershipModuleService>(MEMBERSHIP_MODULE)
 
     if (compensationData.created) {
-      await service.deleteMemberships(compensationData.membership_id)
+      await service.deleteMemberships([compensationData.membership_id])
       return
     }
 

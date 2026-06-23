@@ -64,7 +64,7 @@ export const GET = async (
     tier_name: tier.name,
     has_access: hasAccess,
     capabilities: {
-      ad_free: (TIER_RANK[tier.code] ?? 0) >= TIER_RANK.subscriber,
+      ad_free: (TIER_RANK[tier.code] ?? 0) >= TIER_RANK["subscriber"],
       can_publish: tier.code === "creator",
     },
   })

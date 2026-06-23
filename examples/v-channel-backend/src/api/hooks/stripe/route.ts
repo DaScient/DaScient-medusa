@@ -3,6 +3,11 @@ import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils"
 import { SUBSCRIPTION_MODULE } from "../../../modules/subscription"
 import SubscriptionModuleService from "../../../modules/subscription/service"
 
+// The bodyParser config in middlewares.ts attaches the unparsed body here.
+interface MedusaRequestWithRawBody extends MedusaRequest {
+  rawBody: Buffer | string
+}
+
 // Stripe events that affect a customer's subscription lifecycle.
 const SUBSCRIPTION_EVENTS = new Set([
   "customer.subscription.created",
@@ -35,7 +40,7 @@ export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
   let event
   try {
     // `rawBody` is preserved by the bodyParser config in middlewares.ts.
-    const rawBody = (req as unknown as { rawBody: Buffer | string }).rawBody
+    const rawBody = (req as MedusaRequestWithRawBody).rawBody
     event = subscriptionModule.verifyWebhook(rawBody, signature)
   } catch (err) {
     const message = err instanceof Error ? err.message : "invalid payload"
