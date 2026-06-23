@@ -24,6 +24,6 @@ export async function setNewsletterPreference(
   await medusa.store.customer.update(
     { metadata: { newsletter_opt_in: optIn } },
     {},
-    { Authorization: `****** }
+    { Authorization: "Bearer ".concat(authToken) }
   )
 }

@@ -26,7 +26,7 @@ export async function registerWithEmail(input: {
       last_name: input.last_name,
     },
     {},
-    { Authorization: `****** }
+    { Authorization: "Bearer ".concat(token) }
   )
 
   return token

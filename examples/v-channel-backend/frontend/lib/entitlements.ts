@@ -39,7 +39,7 @@ export async function getEntitlement(input: {
     headers: {
       "x-publishable-api-key": process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY!,
       ...(input.authToken
-        ? { Authorization: `****** }
+        ? { Authorization: "Bearer ".concat(input.authToken) }
         : {}),
     },
     // Always hit the backend; never cache a per-user authorization decision.
