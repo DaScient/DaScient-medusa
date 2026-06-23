@@ -1,0 +1,42 @@
+{
+  "name": "v-channel-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Medusa v2 backend for V-Channel: identity, entitlements, payments, subscriptions, and analytics for a creator media platform.",
+  "license": "MIT",
+  "scripts": {
+    "build": "medusa build",
+    "seed": "medusa exec ./src/scripts/seed.ts",
+    "start": "medusa start",
+    "dev": "medusa develop",
+    "predeploy": "medusa db:migrate"
+  },
+  "dependencies": {
+    "@medusajs/admin-sdk": "latest",
+    "@medusajs/analytics-posthog": "latest",
+    "@medusajs/auth-emailpass": "latest",
+    "@medusajs/auth-google": "latest",
+    "@medusajs/auth-github": "latest",
+    "@medusajs/cache-redis": "latest",
+    "@medusajs/event-bus-redis": "latest",
+    "@medusajs/file-s3": "latest",
+    "@medusajs/framework": "latest",
+    "@medusajs/locking-redis": "latest",
+    "@medusajs/medusa": "latest",
+    "@medusajs/notification-sendgrid": "latest",
+    "@medusajs/payment-stripe": "latest",
+    "@medusajs/workflow-engine-redis": "latest",
+    "awilix": "^8.0.1",
+    "pg": "^8.13.0",
+    "stripe": "^17.0.0"
+  },
+  "devDependencies": {
+    "@medusajs/test-utils": "latest",
+    "@swc/core": "1.5.7",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
