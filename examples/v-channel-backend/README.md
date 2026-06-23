@@ -11,6 +11,13 @@ premium, monetizable platform for creators, celebrities, and influencers.
 > `medusa-config.ts`, `package.json` deps, and `.env.template` from here into it.
 > The `frontend/` folder holds snippets for your existing Next.js app on Vercel.
 
+> **Proprietary documentation.** The full specification of this protocol — the
+> **V-Channel Commerce & Entitlement Protocol (VCEP)** — is in
+> [`docs/`](./docs/README.md). It is a V-Channel, Inc. Proprietary Intellectual
+> Artifact prepared under the DaScient Full-Stack Development Framework by
+> DaScient, Inc. (June 23, 2026; all rights reserved). See
+> [`docs/00-legal-notice.md`](./docs/00-legal-notice.md).
+
 ## Division of responsibilities
 
 | Concern | Owner |
